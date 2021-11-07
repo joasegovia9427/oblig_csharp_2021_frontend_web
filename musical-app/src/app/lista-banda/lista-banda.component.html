@@ -1,1 +1,26 @@
-<p>lista-banda works!</p>
+<h2>Bandas Musicales</h2>
+
+<div *ngFor="let banda of bandas">
+
+  <h3>
+    <a
+      [title]="banda.name + ' details'"
+      [routerLink]="['/bandas', banda.id]">
+      {{ banda.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="banda.description">
+    Description: {{ banda.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+
+<!--   <app-product-alerts
+    [banda]="banda"
+    (notify)="onNotify()">
+  </app-product-alerts> -->
+
+</div>
