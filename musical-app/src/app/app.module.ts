@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,9 @@ import { DetalleCancionComponent } from './detalle-cancion/detalle-cancion.compo
 import { DetalleCantanteComponent } from './detalle-cantante/detalle-cantante.component';
 import { VotoBandaComponent } from './voto-banda/voto-banda.component';
 import { VotoCancionComponent } from './voto-cancion/voto-cancion.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +38,19 @@ import { VotoCancionComponent } from './voto-cancion/voto-cancion.component';
     DetalleCancionComponent,
     DetalleCantanteComponent,
     VotoBandaComponent,
-    VotoCancionComponent
+    VotoCancionComponent,
+    InicioComponent,
+    MenuLateralComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot([
+      { path: '', component: InicioComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'registro', component: RegistroComponent },
+      { path: 'listaBanda', component: ListaBandaComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
