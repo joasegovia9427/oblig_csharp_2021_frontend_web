@@ -1,3 +1,6 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+
 export interface Banda {
     id: number;
     name: string;
@@ -5,8 +8,37 @@ export interface Banda {
     description: string;
   }
   
+  //https://localhost:44378/api/bandas/listado
+
+export class banda{
+
+  constructor(
+    private http: HttpClient
+  ){    }
+
+  getAllBandas(){
+    return this.http.get('https://localhost:44378/api/bandas/listado/');
+  
+  
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+/*
   export const banda: Banda[] = [
-    {
+
+    
+    
+     {
       id: 1,
       name: 'Phone XL',
       price: 799,
@@ -24,5 +56,5 @@ export interface Banda {
       price: 299,
       description: ''
     }
-  ];
+  ]; */
   

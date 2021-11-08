@@ -6,21 +6,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
-import { ListaAlbumComponent } from './lista-album/lista-album.component';
-import { ListaBandaComponent } from './lista-banda/lista-banda.component';
-import { ListaCancionComponent } from './lista-cancion/lista-cancion.component';
-import { ListaCantanteComponent } from './lista-cantante/lista-cantante.component';
-import { DetalleAlbumComponent } from './detalle-album/detalle-album.component';
-import { DetalleBandaComponent } from './detalle-banda/detalle-banda.component';
-import { DetalleCancionComponent } from './detalle-cancion/detalle-cancion.component';
-import { DetalleCantanteComponent } from './detalle-cantante/detalle-cantante.component';
-import { VotoBandaComponent } from './voto-banda/voto-banda.component';
-import { VotoCancionComponent } from './voto-cancion/voto-cancion.component';
-import { InicioComponent } from './inicio/inicio.component';
-import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { ListaAlbumComponent } from './components/lista-album/lista-album.component';
+/* import { ListaBandaComponent } from './components/lista-banda/lista-banda.component'; */
+
+import { ListaCancionComponent } from './components/lista-cancion/lista-cancion.component';
+import { ListaCantanteComponent } from './components/lista-cantante/lista-cantante.component';
+import { DetalleAlbumComponent } from './components/detalle-album/detalle-album.component';
+import { DetalleBandaComponent } from './components/detalle-banda/detalle-banda.component';
+import { DetalleCancionComponent } from './components/detalle-cancion/detalle-cancion.component';
+import { DetalleCantanteComponent } from './components/detalle-cantante/detalle-cantante.component';
+import { VotoBandaComponent } from './components/voto-banda/voto-banda.component';
+import { VotoCancionComponent } from './components/voto-cancion/voto-cancion.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+
+
+import { BandaComponent } from './components/banda/banda.component';
 
 
 @NgModule({
@@ -30,7 +34,6 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
     LoginComponent,
     RegistroComponent,
     ListaAlbumComponent,
-    ListaBandaComponent,
     ListaCancionComponent,
     ListaCantanteComponent,
     DetalleAlbumComponent,
@@ -40,16 +43,19 @@ import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
     VotoBandaComponent,
     VotoCancionComponent,
     InicioComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    BandaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: InicioComponent },
+      //{ path: '', component: InicioComponent },
+      { path: '', component: LoginComponent },
       { path: 'login', component: LoginComponent },
       { path: 'registro', component: RegistroComponent },
-      { path: 'listaBanda', component: ListaBandaComponent },
+      { path: 'listaBanda', component: LoginComponent },
     ])
   ],
   providers: [],
