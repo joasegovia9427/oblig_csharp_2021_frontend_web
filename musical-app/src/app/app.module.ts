@@ -22,6 +22,7 @@ import { VotoBandaComponent } from './components/voto-banda/voto-banda.component
 import { VotoCancionComponent } from './components/voto-cancion/voto-cancion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
+import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horizontal.component';
 
 
 import { BandaComponent } from './components/banda/banda.component';
@@ -44,6 +45,7 @@ import { BandaComponent } from './components/banda/banda.component';
     VotoCancionComponent,
     InicioComponent,
     MenuLateralComponent,
+    MenuHorizontalComponent,
     BandaComponent
   ],
   imports: [

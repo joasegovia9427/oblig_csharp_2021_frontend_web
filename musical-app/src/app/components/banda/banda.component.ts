@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Banda } from '../../banda.module';
 
@@ -8,14 +8,14 @@ import { Banda } from '../../banda.module';
 
 })
 
-export class BandaComponent{
+export class BandaComponent {
 
-    banda: Banda = {
-        id: '1',
-        nombre: 'banda',
-        anoCreacion: 2020,
-        anoSeparacion: 2020,
+    @Input() banda: Banda;
+    @Output() outPut_BandaVerDetalle: EventEmitter<any> = new EventEmitter();
+
+    verDetalle() {
+        console.log("Ver detalle del producto " + this.banda.id)
+        this.outPut_BandaVerDetalle.emit(this.banda.id);
     }
-
 
 }
