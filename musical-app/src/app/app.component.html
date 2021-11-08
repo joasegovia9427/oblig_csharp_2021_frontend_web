@@ -1,40 +1,43 @@
-<app-top-bar></app-top-bar>
-
-<app-banda></app-banda>
-
-
-
-<!-- <app-top-bar></app-top-bar>
+<div><app-top-bar class="top-bar-Nav"></app-top-bar></div>
+<div><app-menu-horizontal class="top-menu"></app-menu-horizontal></div>
 
 <div class="cuerpo">
-  <div class="menu-lateral">
+  <!-- <div class="menu-lateral">
     <app-menu-lateral></app-menu-lateral>
-  </div>
+  </div> -->
   <div class="container">
-    <router-outlet></router-outlet> -->
-    
-    
-    <!-- 
-    {{ title }} 
-    {{ items }} 
-    <ul>
-      <li *ngIf="items.length === 0">Lista vacia... Add Item</li>
-      <li *ngFor="let name of items; index as i">
-        {{ name }}  {{ i }}  
-        <button (click)="deleteItem(i)">Eliminar</button>
-      </li>
-    </ul>
-
-
-    <button (click)="addItem()">Add Item</button>
-    <p>hola fin</p>
-
-
+    <!-- <div>
+      <app-banda></app-banda>
+    </div> -->
     <div *ngFor="let banda of bandas">
-        {{ banda.nombre }}
+      <app-banda
+        (outPut_BandaVerDetalle)="outPut_BandaVerDetalle($event)"
+        [banda]="banda"
+      ></app-banda>
     </div>
- -->
-  
- <!--  </div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <div></div>
+    <!-- 
+                      {{ title }} 
+                      {{ items }} 
+                      <ul>
+                        <li *ngIf="items.length === 0">Lista vacia... Add Item</li>
+                        <li *ngFor="let name of items; index as i">
+                          {{ name }}  {{ i }}  
+                          <button (click)="deleteItem(i)">Eliminar</button>
+                        </li>
+                      </ul>
+
+
+                      <button (click)="addItem()">Add Item</button>
+                      <p>hola fin</p>
+
+
+                      
+                  -->
+  </div>
 </div>
- -->
