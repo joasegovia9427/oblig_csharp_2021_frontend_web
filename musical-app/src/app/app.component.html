@@ -2,43 +2,9 @@
 <div><app-menu-horizontal class="top-menu"></app-menu-horizontal></div>
 
 <div class="cuerpo">
-  <!-- <div class="menu-lateral">
-    <app-menu-lateral></app-menu-lateral>
-  </div> -->
   <div class="container">
-    <!-- <div>
-      <app-banda></app-banda>
-    </div> -->
-    <div class="banda-grid">
-      <app-banda
-        *ngFor="let banda of bandas"
-        (outPut_BandaVerDetalle)="outPut_BandaVerDetalle($event)"
-        [banda]="banda"
-      ></app-banda>
-    </div>
-
     <div>
       <router-outlet></router-outlet>
     </div>
-
-    <div></div>
-    <!-- 
-                      {{ title }} 
-                      {{ items }} 
-                      <ul>
-                        <li *ngIf="items.length === 0">Lista vacia... Add Item</li>
-                        <li *ngFor="let name of items; index as i">
-                          {{ name }}  {{ i }}  
-                          <button (click)="deleteItem(i)">Eliminar</button>
-                        </li>
-                      </ul>
-
-
-                      <button (click)="addItem()">Add Item</button>
-                      <p>hola fin</p>
-
-
-                      
-                  -->
   </div>
 </div>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horiz
 
 import { BandaComponent } from './components/banda/banda.component';
 import { ListaBandaComponent } from './components/lista-banda/lista-banda.component';
+import { ExponentialPipe } from './exponential.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 
 @NgModule({
@@ -48,15 +51,18 @@ import { ListaBandaComponent } from './components/lista-banda/lista-banda.compon
     MenuLateralComponent,
     MenuHorizontalComponent,
     BandaComponent,
-    ListaBandaComponent
+    ListaBandaComponent,
+    ExponentialPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       //{ path: '', component: InicioComponent },
-      { path: '', component: LoginComponent },
+      { path: '', component: InicioComponent },
       { path: 'login', component: LoginComponent },
       { path: 'registro', component: RegistroComponent },
       { path: 'listaBanda', component: LoginComponent },

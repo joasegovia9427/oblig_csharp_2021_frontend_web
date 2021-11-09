@@ -10,7 +10,7 @@ import {
     OnDestroy
 } from '@angular/core';
 
-import { Banda } from '../../banda.module';
+import { Banda } from '../../core/models/banda.module';
 
 @Component({
     selector: 'app-banda',
@@ -23,6 +23,8 @@ export class BandaComponent implements OnInit, DoCheck, OnDestroy {
 
     @Input() banda: Banda;
     @Output() outPut_BandaVerDetalle: EventEmitter<any> = new EventEmitter();
+
+    today = new Date();
 
     constructor() {
         console.log('1 constructor');
