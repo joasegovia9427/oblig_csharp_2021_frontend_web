@@ -26,6 +26,7 @@ import { MenuHorizontalComponent } from './components/menu-horizontal/menu-horiz
 
 
 import { BandaComponent } from './components/banda/banda.component';
+import { ListaBandaComponent } from './components/lista-banda/lista-banda.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { BandaComponent } from './components/banda/banda.component';
     InicioComponent,
     MenuLateralComponent,
     MenuHorizontalComponent,
-    BandaComponent
+    BandaComponent,
+    ListaBandaComponent
   ],
   imports: [
     BrowserModule,

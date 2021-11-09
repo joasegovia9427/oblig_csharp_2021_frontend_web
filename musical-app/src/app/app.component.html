@@ -9,8 +9,9 @@
     <!-- <div>
       <app-banda></app-banda>
     </div> -->
-    <div *ngFor="let banda of bandas">
+    <div class="banda-grid">
       <app-banda
+        *ngFor="let banda of bandas"
         (outPut_BandaVerDetalle)="outPut_BandaVerDetalle($event)"
         [banda]="banda"
       ></app-banda>
