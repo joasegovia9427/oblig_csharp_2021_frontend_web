@@ -4,5 +4,4 @@ export interface Banda {
     nombre: string;
     anoCreacion: number;
     anoSeparacion: number;
-
 }
