@@ -1,40 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { ListaBandaComponent } from './components/lista-banda/lista-banda.component';
-import { ListaAlbumComponent } from './components/lista-album/lista-album.component';
-import { ListaCancionComponent } from './components/lista-cancion/lista-cancion.component';
-import { ListaCantanteComponent } from './components/lista-cantante/lista-cantante.component';
-import { LoginComponent } from './components/login/login.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { LoginComponent } from './login/login.component';
+import { BandasComponent } from './bandas/bandas.component';
+import { AlbumesComponent } from './albumes/albumes.component';
 
-import { BandaComponent } from './components/banda/banda.component';
+//import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: InicioComponent
+  },
+  {
+    path: '',
+    redirectTo: '/inicio',
+    pathMatch: 'full'
+  },
   {
     path: 'inicio',
     component: InicioComponent
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'bandas',
-    component: ListaBandaComponent
+    component: BandasComponent
   },
   {
     path: 'albumes',
-    component: ListaAlbumComponent
-  },
-  {
-    path: 'canciones',
-    component: ListaCancionComponent
-  },
-  {
-    path: 'cantantes',
-    component: ListaCantanteComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
+    component: AlbumesComponent
   }
+  /*  {
+     path: '**',
+     component: PageNotFoundComponent
+   } */
 ];
 
 @NgModule({
