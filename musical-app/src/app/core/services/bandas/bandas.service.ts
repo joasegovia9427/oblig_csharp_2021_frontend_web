@@ -1,41 +1,54 @@
-import { isNgTemplate } from '@angular/compiler';
+//import { isNgTemplate } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import {
+  HttpClient, HttpHeaders, HttpClientModule, HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest,
+} from '@angular/common/http';
 
 import { Banda } from '../../models/banda.model';
+import { environment } from 'src/environments/environment';
+import { Resenia } from '../../models/resenia.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BandasService {
 
-  bandas: Banda[] = [
-    {
-      id: "1",
-      genero: "rock&roll from service",
-      nombre: 'Stones',
-      anoCreacion: 1000,
-      anoSeparacion: 1021,
-    },
-    {
-      id: "2",
-      genero: "rock",
-      nombre: 'Beatles',
-      anoCreacion: 2000,
-      anoSeparacion: 2021,
-    }
-  ];
+  url: string;
+  params: string;
+  resenia: Resenia;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Authorization': 'authkey',
+      'userid': '1'
+    })
+  };
 
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor() { }
 
 
   getAllBandas() {
-    return this.bandas;
+    this.url = environment.url_api + '/bandas/listado';
+    console.log(this.url);
+    return this.http.get<Banda[]>(this.url);
   }
 
   getBanda(id: string) {
-    return this.bandas.find(item => id === item.id);
+    this.url = environment.url_api + '/bandas/obtener/' + id;
+    return this.http.get<Banda>(this.url);
+  }
+
+  enviarResenia(newResenia) {
+    this.url = environment.url_api + '/resenias/alta/'
+    console.log(this.url + newResenia);
+    return this.http.post(this.url, newResenia);
   }
 
 }
