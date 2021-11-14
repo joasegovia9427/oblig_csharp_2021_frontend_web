@@ -1,0 +1,30 @@
+nav > a {
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  vertical-align: -moz-middle-with-baseline;
+}
+
+nav > a > img {
+  float: left;
+  margin-top: 4.5px;
+}
+
+nav > a.active {
+  /*   padding: 5px;
+  text-decoration: none; */
+  background-color: rgb(43, 43, 139);
+  /*   color: white; */
+}
+
+.header-row {
+  width: 100%;
+}
+
+.header-toolbar {
+  margin-bottom: 20px;
+}
+
+.top-bar-icon {
+  width: 36px;
+}

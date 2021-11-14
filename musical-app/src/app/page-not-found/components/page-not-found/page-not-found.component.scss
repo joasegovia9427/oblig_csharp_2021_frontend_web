@@ -1,0 +1,73 @@
+.cuerpo {
+  font-family: "Montserrat", sans-serif;
+  /* background: #ebf0f8; */
+  /* background-image: url("https://media.newyorker.com/photos/6132512767370ae395a241d5/16:9/w_2128,h_1197,c_limit/Pearce-Donda-Social.jpg");
+   */
+  background-image: url("../../../../assets/images/pagenotfound.png");
+
+  .error-block {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .error-code {
+      font-size: 200px;
+      font-weight: bold;
+      color: rgb(216, 216, 216);
+      text-shadow: 0 2px 26px rgba(139, 139, 139, 0.15);
+      &:after {
+        content: attr(data-text);
+        position: absolute;
+        left: 2px;
+        text-shadow: -1px 0 #f3ecc3;
+        top: 0;
+        color: #fff;
+        background: #ebf0f8;
+        overflow: hidden;
+        clip: rect(0, 100px, 0, 0);
+        animation: glitch 2s infinite linear alternate-reverse;
+      }
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        left: -2px;
+        text-shadow: 1px 0 #cfe9ff;
+        top: 0;
+        color: #fff;
+        background: #ebf0f8;
+        overflow: hidden;
+        clip: rect(0, 100px, 0, 0);
+        animation: glitch-2 3s infinite linear alternate-reverse;
+      }
+    }
+
+    .error-message {
+      color: rgb(139, 139, 139);
+      font-size: 20px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 26px rgba(139, 139, 139, 0.25);
+      border-top: 2px solid #fff;
+      padding-top: 25px;
+    }
+  }
+}
+
+@keyframes glitch {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(150) + px, 999px, random(200) + px, 0);
+    }
+  }
+}
+
+@keyframes glitch-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(150) + px, 999px, random(200) + px, 0);
+    }
+  }
+}
