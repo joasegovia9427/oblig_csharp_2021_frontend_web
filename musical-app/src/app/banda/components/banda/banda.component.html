@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ banda.nombre | uppercase }}</mat-card-title>
+    <mat-card-subtitle>Género: {{ banda.genero }}</mat-card-subtitle>
+  </mat-card-header>
+  <!--   <div class="crop-image">
+    <img [src]="product.image" alt="">
+  </div>  -->
+  <mat-card-content>
+    <p>Banda ID: {{ banda.id }}</p>
+    <p>Año de creación {{ banda.anoCreacion }}</p>
+    <p>Año de separación {{ banda.anoSeparacion }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" routerLink="/bandas/{{ banda.id }}"
+      >Escribir reseña</a
+    >
+    <!-- <button (click)="resenia()" mat-raised-button color="primary">
+      Escribir console
+    </button> -->
+  </mat-card-actions>
+</mat-card>
+
+<!-- <strong>{{ banda.nombre | uppercase }}</strong>
+<p>Género: {{ banda.genero }}</p>
+<p>Año de creación: {{ banda.anoCreacion }}</p>
+<p>Año de separación: {{ banda.anoSeparacion }}</p> -->
+<!-- <button (click)="resenia()" mat-raised-button color="primary">
+  Escribir reseña
+</button> -->
+<!-- <a mat-raised-button routerLink="/bandas/{{ banda.id }}">Escribir reseña</a>
+ -->

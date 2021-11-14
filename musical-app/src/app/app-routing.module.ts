@@ -1,47 +1,60 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
-import { LoginComponent } from './login/login.component';
-import { BandasComponent } from './bandas/bandas.component';
-import { AlbumesComponent } from './albumes/albumes.component';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-//import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LayoutComponent } from './layout/layout.component';
+import { AdminGuard } from './admin.guard';
+
+//proximos a modularizar
+import { AlbumesComponent } from './albumes/albumes.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: InicioComponent
-  },
-  {
     path: '',
-    redirectTo: '/inicio',
-    pathMatch: 'full'
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      /* {
+        path: 'inicio',
+        //canActivate: [AdminGuard], //si quisera generar seguridad en esta pantalla, le pongo esta etiqueta
+        redirectTo: '/home',
+        pathMatch: 'full'
+      }, */
+      {
+        path: 'home',
+        //component: HomeComponent
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'bandas',
+        loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
+      },
+      {
+        path: 'albumes',
+        component: AlbumesComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: '**',
+        loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+      },
+    ]
   },
-  {
-    path: 'inicio',
-    component: InicioComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'bandas',
-    component: BandasComponent
-  },
-  {
-    path: 'albumes',
-    component: AlbumesComponent
-  }
-  /*  {
-     path: '**',
-     component: PageNotFoundComponent
-   } */
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
