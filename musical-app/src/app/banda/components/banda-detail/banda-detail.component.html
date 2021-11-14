@@ -1,11 +1,19 @@
-<!-- <div>
-  <img [src]="product.image" alt="" />
-</div> -->
-<div>
-  <ul>
-    <li>Nombre: {{ banda.nombre }}</li>
-    <li>Género: {{ banda.genero }}</li>
-    <li>Año de creación: {{ banda.anoCreacion }}</li>
-    <li>Año de separación: {{ banda.anoSeparacion }}</li>
-  </ul>
-</div>
+<mat-card *ngIf="banda">
+  <mat-card-header>
+    <mat-card-title>{{ banda.Nombre | uppercase }}</mat-card-title>
+    <mat-card-subtitle>Género: {{ banda.Genero }}</mat-card-subtitle>
+  </mat-card-header>
+  <!--   <div class="crop-image">
+    <img [src]="product.image" alt="">
+  </div>  -->
+  <mat-card-content>
+    <p>Banda ID: {{ banda.Id }}</p>
+    <p>Año de creación {{ banda.AnioCreacion }}</p>
+    <p>Año de separación {{ banda.AnioSeparacion }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="enviarResenia()" mat-raised-button color="primary">
+      Enviar Reseña
+    </button>
+  </mat-card-actions>
+</mat-card>

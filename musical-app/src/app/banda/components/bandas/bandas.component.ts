@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 import { Banda } from './../../../core/models/banda.model';
+import { BandasService } from 'src/app/core/services/bandas/bandas.service';
 
 @Component({
   selector: 'app-bandas',
@@ -11,27 +12,12 @@ import { Banda } from './../../../core/models/banda.model';
 export class BandasComponent implements OnInit {
 
 
-  bandas: Banda[] = [
-    {
-      id: "1",
-      genero: "rock from list y no service",
-      nombre: 'Stones',
-      anoCreacion: 1000,
-      anoSeparacion: 1021,
-    },
-    {
-      id: "2",
-      genero: "rock",
-      nombre: 'Beatles',
-      anoCreacion: 2000,
-      anoSeparacion: 2021,
-    }
-  ];
+  bandas: Banda[] = [];
 
   constructor(
-    //private bandasService: BandasService
+    private bandasService: BandasService
   ) {
-    console.log("constructor bandas bandas.count" + this.bandas.length);
+    //console.log("constructor bandas bandas.count" + this.bandas.length);
     /* for (const banda of this.bandas) {
       console.log("banda id:: " + banda.id);
     } */
@@ -40,8 +26,7 @@ export class BandasComponent implements OnInit {
 
 
   ngOnInit(): void {
-    //this.fetchTest();
-    //this.fetchBandas();
+    this.fetchBandas();
   }
 
   outPut_BandaVerDetalle(id: string) {
@@ -49,12 +34,12 @@ export class BandasComponent implements OnInit {
 
   }
 
-  /* fetchBandas() {
+  fetchBandas() {
     this.bandasService.getAllBandas()
       .subscribe(bandas => {
-        console.log(bandas);
+        this.bandas = bandas;
       })
-  } */
+  }
 
   /*  fetchTest() {
       this.bandasService.getTest()

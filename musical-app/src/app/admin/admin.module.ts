@@ -17,14 +17,14 @@ import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { MatGridListModule } from '@angular/material/grid-list';
+/* import { DashboardComponent } from './component/dashboard/dashboard.component';
+ */import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
-  declarations: [BandaFormComponent, NavComponent, TableComponent, DashboardComponent],
+  declarations: [BandaFormComponent, NavComponent, TableComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

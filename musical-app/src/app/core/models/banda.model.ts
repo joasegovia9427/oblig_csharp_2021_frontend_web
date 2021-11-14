@@ -1,7 +1,7 @@
 export interface Banda {
-    id: string;
-    genero: string;
-    nombre: string;
-    anoCreacion: number;
-    anoSeparacion: number;
+    Id: string;
+    Genero: string;
+    Nombre: string;
+    AnioCreacion: number;
+    AnioSeparacion: number;
 }

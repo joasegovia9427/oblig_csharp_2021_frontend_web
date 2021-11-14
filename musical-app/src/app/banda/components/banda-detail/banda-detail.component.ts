@@ -21,13 +21,16 @@ export class BandaDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-
       const id = params.id;
-
-      this.banda = this.bandasService.getBanda(id);
-
-      console.log(this.banda);
+      this.fetchBanda(id)
     });
   }
 
+  fetchBanda(id: string) {
+    this.bandasService.getBanda(id).subscribe(banda => { this.banda = banda; })
+  }
+
+  enviarResenia() {
+    alert("enviando reseña");
+  }
 }
