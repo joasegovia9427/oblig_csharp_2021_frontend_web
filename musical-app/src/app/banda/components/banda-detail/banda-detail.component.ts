@@ -43,24 +43,12 @@ export class BandaDetailComponent implements OnInit {
   }
 
   enviarResenia(reseniaTexto: string) {
-    /*  const bandaId = this.banda.Id;
-     const usuarioId = 1;
-     const voto = this.voto;
-     const resenia = reseniaTexto;
- 
-     console.log("bandaId:" + bandaId);
-     console.log("usuarioId:" + usuarioId);
-     console.log("voto:" + voto);
-     console.log("resenia:" + resenia);
-  */
     const newResenia: Resenia = {
       Id: 0,
       Puntaje: this.voto,
       Resenia: reseniaTexto,
-      // BandaId: this.banda.Id,
-      // CancionId: 0,
-      BandaId: 0,
-      CancionId: 8,
+      BandaId: this.banda.Id,
+      CancionId: 0,
       UsuarioId: 1,
     }
 
