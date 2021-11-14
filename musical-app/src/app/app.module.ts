@@ -41,12 +41,12 @@ import { AlbumesComponent } from './albumes/albumes.component';
     CoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot([
+    /* RouterModule.forRoot([
       //{ path: '', component: InicioComponent },
       //{ path: '', component: InicioComponent },
       //{ path: 'login', component: LoginComponent },
       //{ path: 'registro', component: RegistroComponent },
-    ]),
+    ]), */
   ],
   providers: [],
   bootstrap: [AppComponent]
