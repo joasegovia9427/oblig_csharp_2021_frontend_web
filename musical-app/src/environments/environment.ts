@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url_api: 'https://localhost:44378/api'
+  // url_api: '/api'
+
+
+  // "start": "ng serve --proxy-config proxy.conf.json",
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

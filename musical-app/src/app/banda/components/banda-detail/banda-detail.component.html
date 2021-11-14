@@ -10,10 +10,51 @@
     <p>Banda ID: {{ banda.Id }}</p>
     <p>Año de creación {{ banda.AnioCreacion }}</p>
     <p>Año de separación {{ banda.AnioSeparacion }}</p>
+    <p>Cantidad de integrantes {{ banda.Integrantes.length }}</p>
   </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="banda">
+  <mat-card-header>
+    <mat-card-title> Reseña </mat-card-title>
+    <mat-card-subtitle>Banda: {{ banda.Nombre }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-radio-group aria-label="Vota por tu banda" name="reseniaVoto">
+    <mat-radio-button value="1" (change)="radioChange($event, 1)"
+      >1<mat-icon>star</mat-icon></mat-radio-button
+    >
+    <mat-radio-button value="2" (change)="radioChange($event, 2)"
+      >2<mat-icon>star</mat-icon></mat-radio-button
+    >
+    <mat-radio-button value="3" (change)="radioChange($event, 3)"
+      >3<mat-icon>star</mat-icon></mat-radio-button
+    >
+    <mat-radio-button value="4" (change)="radioChange($event, 4)"
+      >4<mat-icon>star</mat-icon></mat-radio-button
+    >
+    <mat-radio-button value="5" (change)="radioChange($event, 5)"
+      >5<mat-icon>star</mat-icon></mat-radio-button
+    >
+  </mat-radio-group>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Escribe tu reseña aqui</mat-label>
+    <textarea
+      #reseniaTexto
+      matInput
+      placeholder="Ej.: Creo que esta banda es la mejor por..."
+    ></textarea>
+  </mat-form-field>
+
   <mat-card-actions>
-    <button (click)="enviarResenia()" mat-raised-button color="primary">
+    <button
+      (click)="enviarResenia(reseniaTexto.value)"
+      mat-raised-button
+      color="primary"
+    >
       Enviar Reseña
     </button>
+    <a mat-stroked-button color="primary" routerLink="/bandas">Volver</a>
   </mat-card-actions>
 </mat-card>

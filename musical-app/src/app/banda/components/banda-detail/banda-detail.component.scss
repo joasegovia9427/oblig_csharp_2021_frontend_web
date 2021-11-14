@@ -1,0 +1,26 @@
+mat-card {
+  margin-top: 10px;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.mat-icon {
+  color: #3f51b5;
+}
+
+.mat-radio-button {
+  margin-left: 2%;
+  margin-bottom: 1%;
+  background-color: rgb(243, 243, 243);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+@media (min-width: 576px) {
+  mat-card {
+    margin-top: 10px;
+    width: 80%;
+  }
+}
