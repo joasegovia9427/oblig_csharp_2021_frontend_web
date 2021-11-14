@@ -47,10 +47,8 @@ export class BandaDetailComponent implements OnInit {
       Id: 0,
       Puntaje: this.voto,
       Resenia: reseniaTexto,
-      // BandaId: this.banda.Id,
-      // CancionId: 0,
-      BandaId: 0,
-      CancionId: 8,
+      BandaId: this.banda.Id,
+      CancionId: 0,
       UsuarioId: 1,
     }
 
