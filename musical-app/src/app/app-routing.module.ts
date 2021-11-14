@@ -36,18 +36,26 @@ const routes: Routes = [
         loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
       },
       {
+        path: 'admin',
+        loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
+      },
+      {
         path: 'albumes',
         component: AlbumesComponent
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: '**',
-        loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
-      },
+      }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   },
 ];
 
