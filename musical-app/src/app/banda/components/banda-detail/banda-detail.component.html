@@ -1,6 +1,10 @@
+<div class="listaTituloBox" *ngIf="banda">
+  <h6 class="listaTitulo">Nombre de Banda: {{ banda.Nombre | uppercase }}</h6>
+</div>
+
 <mat-card *ngIf="banda">
   <mat-card-header>
-    <mat-card-title>{{ banda.Nombre | uppercase }}</mat-card-title>
+    <!-- <mat-card-title>{{ banda.Nombre | uppercase }}</mat-card-title> -->
     <mat-card-subtitle>Género: {{ banda.Genero }}</mat-card-subtitle>
   </mat-card-header>
   <!--   <div class="crop-image">

@@ -5,9 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
 //proximos a modularizar
-import { AlbumesComponent } from './albumes/albumes.component';
 import { LoginComponent } from './login/login.component';
-
 
 
 const routes: Routes = [
@@ -36,12 +34,12 @@ const routes: Routes = [
         loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
       },
       {
-        path: 'admin',
-        loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
+        path: 'albumes',
+        loadChildren: () => import('./album/album.module').then(m => m.AlbumModule)
       },
       {
-        path: 'albumes',
-        component: AlbumesComponent
+        path: 'admin',
+        loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
       }
     ]
   },

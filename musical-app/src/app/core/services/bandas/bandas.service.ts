@@ -33,7 +33,6 @@ export class BandasService {
   ) { }
 
 
-
   getAllBandas() {
     this.url = environment.url_api + '/bandas/listado';
     console.log(this.url);
