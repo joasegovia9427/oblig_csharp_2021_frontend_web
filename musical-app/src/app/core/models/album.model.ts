@@ -2,8 +2,8 @@ import {
     Banda
 } from "./banda.model";
 import {
-    Cancione
-} from "./cancione.model";
+    Cancion
+} from "./cancion.model";
 
 export interface Album {
     Id: number;
@@ -11,6 +11,6 @@ export interface Album {
     AnioCreacion: number;
     Genero: string;
     Banda: Banda;
-    Canciones: Cancione[];
+    Canciones: Cancion[];
     Error?: any;
 }

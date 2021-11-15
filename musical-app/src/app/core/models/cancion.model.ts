@@ -1,4 +1,4 @@
-export interface Cancione {
+export interface Cancion {
     Id: number;
     Nombre: string;
     Duracion: number;
@@ -7,4 +7,5 @@ export interface Cancione {
     IntegranteId: number;
     Genero: string;
     Error?: any;
+
 }
