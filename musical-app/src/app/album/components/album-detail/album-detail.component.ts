@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { AlbumesService } from 'src/app/core/services/albumes/albumes.service';
 import { Album } from 'src/app/core/models/album.model';
-import { Cancione } from 'src/app/core/models/cancione.model';
+import { Cancion } from 'src/app/core/models/cancion.model';
 
 @Component({
   selector: 'app-album-detail',
@@ -14,7 +14,7 @@ import { Cancione } from 'src/app/core/models/cancione.model';
 export class AlbumDetailComponent implements OnInit {
 
   album: Album;
-  canciones: Cancione;
+  canciones: Cancion;
 
   constructor(
     private route: ActivatedRoute,

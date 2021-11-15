@@ -1,0 +1,8 @@
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Lista de Canciones</h6>
+</div>
+
+<div class="cancion-grid">
+  <app-cancion *ngFor="let cancion of canciones" [cancion]="cancion">
+  </app-cancion>
+</div>

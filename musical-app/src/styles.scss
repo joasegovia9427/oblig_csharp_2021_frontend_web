@@ -6,7 +6,8 @@
 
 .banda-grid,
 .album-grid,
-.integrante-grid {
+.integrante-grid,
+.cancion-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 50px 20px;
@@ -26,7 +27,8 @@
   .integrante-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .album-grid {
+  .album-grid,
+  .cancion-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .container {

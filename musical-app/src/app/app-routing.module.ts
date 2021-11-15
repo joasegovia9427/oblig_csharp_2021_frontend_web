@@ -46,6 +46,10 @@ const routes: Routes = [
         loadChildren: () => import('./integrante/integrante.module').then(m => m.IntegranteModule)
       },
       {
+        path: 'canciones',
+        loadChildren: () => import('./cancion/cancion.module').then(m => m.CancionModule)
+      },
+      {
         path: 'admin',
         loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
       }
