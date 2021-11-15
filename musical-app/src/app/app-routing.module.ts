@@ -38,6 +38,14 @@ const routes: Routes = [
         loadChildren: () => import('./album/album.module').then(m => m.AlbumModule)
       },
       {
+        path: 'cantantes',
+        loadChildren: () => import('./integrante/integrante.module').then(m => m.IntegranteModule)
+      },
+      {
+        path: 'integrantes',
+        loadChildren: () => import('./integrante/integrante.module').then(m => m.IntegranteModule)
+      },
+      {
         path: 'admin',
         loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
       }

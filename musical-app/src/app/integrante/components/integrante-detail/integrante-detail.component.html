@@ -1,0 +1,27 @@
+<div class="listaTituloBox" *ngIf="integrante">
+  <h6 class="listaTitulo">
+    Cantante: {{ integrante.Persona.Nombre | uppercase }}
+    {{ integrante.Persona.Apellido | uppercase }}
+  </h6>
+</div>
+
+<mat-card *ngIf="integrante">
+  <div class="crop-image">
+    <img [src]="integrante.Foto" alt="" />
+  </div>
+  <mat-card-header>
+    <mat-card-title
+      >Fecha de Nacimiento: {{ integrante.FechaNacimiento | date: "longDate" }}
+    </mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Integrante Id: {{ integrante.Id }}</p>
+    <p>Persona Id: {{ integrante.Persona.Id }}</p>
+    <p>Banda Id: {{ integrante.BandaId }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-stroked-button color="primary" routerLink="/cantantes">Volver</a>
+  </mat-card-actions>
+</mat-card>

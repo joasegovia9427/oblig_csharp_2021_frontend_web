@@ -1,0 +1,12 @@
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Lista de Cantantes</h6>
+</div>
+
+<div class="integrante-grid">
+  <app-integrante
+    *ngFor="let integrante of integrantes"
+    (outPut_IntegranteVerDetalle)="outPut_IntegranteVerDetalle($event)"
+    [integrante]="integrante"
+  >
+  </app-integrante>
+</div>
