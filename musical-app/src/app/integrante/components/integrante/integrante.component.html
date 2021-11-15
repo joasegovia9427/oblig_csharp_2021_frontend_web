@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title
+      >{{ integrante.Persona.Nombre | uppercase }}
+    </mat-card-title>
+    <mat-card-subtitle>{{
+      integrante.Persona.Apellido | uppercase
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="crop-image">
+    <img [src]="integrante.Foto" alt="" />
+  </div>
+  <mat-card-content>
+    <p>
+      Fecha de Nacimiento: {{ integrante.FechaNacimiento | date: "longDate" }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/cantantes/{{ integrante.Id }}"
+      >Ver detalle</a
+    >
+  </mat-card-actions>
+</mat-card>
