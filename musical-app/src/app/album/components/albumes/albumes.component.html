@@ -1,0 +1,12 @@
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Lista de Albumes</h6>
+</div>
+
+<div class="album-grid">
+  <app-album
+    *ngFor="let album of albumes"
+    (outPut_AlbumVerDetalle)="outPut_AlbumVerDetalle($event)"
+    [album]="album"
+  >
+  </app-album>
+</div>

@@ -1,0 +1,17 @@
+<div class="listaTituloBox" *ngIf="album">
+  <h6 class="listaTitulo">Nombre de Album: {{ album.Nombre | uppercase }}</h6>
+</div>
+
+<mat-card *ngIf="album">
+  <mat-card-header>
+    <!-- <mat-card-title>{{ album.Nombre | uppercase }}</mat-card-title> -->
+    <mat-card-subtitle>Banda: {{ album.Banda.Nombre }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Album ID: {{ album.Id }}</p>
+    <p>Género: {{ album.Genero }}</p>
+    <p>Año de creación: {{ album.AnioCreacion }}</p>
+    <p>Cantidad de canciones: {{ album.Canciones.length }}</p>
+  </mat-card-content>
+  <a mat-stroked-button color="primary" routerLink="/albumes">Volver</a>
+</mat-card>

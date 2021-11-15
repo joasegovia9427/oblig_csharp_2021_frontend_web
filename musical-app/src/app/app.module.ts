@@ -18,7 +18,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
-import { AlbumesComponent } from './albumes/albumes.component';
 
 
 @NgModule({
@@ -29,7 +28,6 @@ import { AlbumesComponent } from './albumes/albumes.component';
     LoginComponent,
     RegistroComponent,
     MenuHorizontalComponent,
-    AlbumesComponent,
   ],
   imports: [
     BrowserModule,

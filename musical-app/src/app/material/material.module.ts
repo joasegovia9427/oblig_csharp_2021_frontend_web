@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatRadioChange } from '@angular/material/radio';
+import { MatDivider } from '@angular/material/divider';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { MatRadioChange } from '@angular/material/radio';
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
+
 
   ],
   exports: [

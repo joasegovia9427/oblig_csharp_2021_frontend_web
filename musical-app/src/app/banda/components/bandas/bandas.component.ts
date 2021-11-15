@@ -11,7 +11,6 @@ import { BandasService } from 'src/app/core/services/bandas/bandas.service';
 })
 export class BandasComponent implements OnInit {
 
-
   bandas: Banda[] = [];
 
   constructor(
@@ -24,14 +23,12 @@ export class BandasComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
     this.fetchBandas();
   }
 
   outPut_BandaVerDetalle(id: string) {
     console.log('en file bandas.component.ts, lo que capture desde lo profundo ' + id)
-
   }
 
   fetchBandas() {
