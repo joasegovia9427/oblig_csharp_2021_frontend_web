@@ -2,11 +2,32 @@
   <h6 class="listaTitulo">Lista de Cantantes</h6>
 </div>
 
+<mat-form-field appearance="outline">
+  <mat-label>Filtra por nombre de Cantante</mat-label>
+  <input id="filtroCards" matInput placeholder="Ej.: John" />
+</mat-form-field>
+
 <div class="integrante-grid">
-  <app-integrante
-    *ngFor="let integrante of integrantes"
-    (outPut_IntegranteVerDetalle)="outPut_IntegranteVerDetalle($event)"
-    [integrante]="integrante"
-  >
-  </app-integrante>
+  <ng-container *ngFor="let integrante of integrantes">
+    <ng-container
+      *ngIf="
+        integrante.Persona.Nombre.toLowerCase().includes(
+          this.filtro_nombre.toLowerCase()
+        ) ||
+        integrante.Persona.Apellido.toLowerCase().includes(
+          this.filtro_nombre.toLowerCase()
+        ) ||
+        (
+          integrante.Persona.Nombre.toLowerCase() +
+          integrante.Persona.Apellido.toLowerCase()
+        ).includes(this.filtro_nombre.toLowerCase()) ||
+        (
+          integrante.Persona.Nombre.toLowerCase() +
+          ' ' +
+          integrante.Persona.Apellido.toLowerCase()
+        ).includes(this.filtro_nombre.toLowerCase())
+      "
+      ><app-integrante [integrante]="integrante"> </app-integrante
+    ></ng-container>
+  </ng-container>
 </div>

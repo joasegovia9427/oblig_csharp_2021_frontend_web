@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 import { Cancion } from './../../../core/models/cancion.model';
 import { CancionesService } from 'src/app/core/services/canciones/canciones.service';
@@ -9,24 +9,26 @@ import { CancionesService } from 'src/app/core/services/canciones/canciones.serv
   templateUrl: './canciones.component.html',
   styleUrls: ['./canciones.component.scss']
 })
-export class CancionesComponent implements OnInit {
+export class CancionesComponent implements DoCheck, OnInit {
 
 
   canciones: Cancion[] = [];
+  filtro_nombre: string;
 
   constructor(
     private cancionesService: CancionesService
   ) {
-    //console.log("constructor bandas bandas.count" + this.bandas.length);
-    /* for (const banda of this.bandas) {
-      console.log("banda id:: " + banda.id);
-    } */
-
+    this.filtro_nombre = "";
   }
 
 
   ngOnInit(): void {
     this.fetchCanciones();
+    // console.log("luego de this.fetchCanciones();");
+  }
+
+  ngDoCheck() {
+    this.filtro_nombre = (<HTMLInputElement>document.getElementById("filtroCards")).value;
   }
 
   outPut_CancionVerDetalle(id: string) {
@@ -39,6 +41,7 @@ export class CancionesComponent implements OnInit {
       .subscribe(canciones => {
         this.canciones = canciones;
       })
+
   }
 
 

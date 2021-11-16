@@ -2,16 +2,30 @@
   <h6 class="listaTitulo">Lista de Bandas</h6>
 </div>
 
+<mat-form-field appearance="outline">
+  <mat-label>Filtra por nombre de Banda</mat-label>
+  <input id="filtroCards" matInput placeholder="Ej.: Mouse" />
+</mat-form-field>
+
 <!-- <div class="banda-grid" *ngFor="let banda of bandas">
   <p>{{ banda.id }}</p>
   <p>{{ banda.nombre }}</p>
 </div> -->
 
 <div class="banda-grid">
-  <app-banda
+  <ng-container *ngFor="let banda of bandas">
+    <ng-container
+      *ngIf="
+        banda.Nombre.toLowerCase().includes(this.filtro_nombre.toLowerCase())
+      "
+      ><app-banda [banda]="banda"></app-banda
+    ></ng-container>
+  </ng-container>
+
+  <!-- <app-banda
     *ngFor="let banda of bandas"
     (outPut_BandaVerDetalle)="outPut_BandaVerDetalle($event)"
     [banda]="banda"
   >
-  </app-banda>
+  </app-banda> -->
 </div>

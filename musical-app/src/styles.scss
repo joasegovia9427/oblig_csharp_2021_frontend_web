@@ -24,11 +24,11 @@
 
 @media (min-width: 576px) {
   .banda-grid,
-  .integrante-grid {
+  .integrante-grid,
+  .cancion-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  .album-grid,
-  .cancion-grid {
+  .album-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .container {
@@ -55,6 +55,10 @@
 .listaTitulo {
   color: #3f51b5;
   font-size: 30px !important;
+}
+
+.mat-form-field {
+  width: 50%;
 }
 
 html,

@@ -2,11 +2,18 @@
   <h6 class="listaTitulo">Lista de Albumes</h6>
 </div>
 
+<mat-form-field appearance="outline">
+  <mat-label>Filtra por nombre de Album</mat-label>
+  <input id="filtroCards" matInput placeholder="Ej.: Abbey Road" />
+</mat-form-field>
+
 <div class="album-grid">
-  <app-album
-    *ngFor="let album of albumes"
-    (outPut_AlbumVerDetalle)="outPut_AlbumVerDetalle($event)"
-    [album]="album"
-  >
-  </app-album>
+  <ng-container *ngFor="let album of albumes">
+    <ng-container
+      *ngIf="
+        album.Nombre.toLowerCase().includes(this.filtro_nombre.toLowerCase())
+      "
+      ><app-album [album]="album"> </app-album
+    ></ng-container>
+  </ng-container>
 </div>
