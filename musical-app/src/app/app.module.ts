@@ -20,6 +20,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

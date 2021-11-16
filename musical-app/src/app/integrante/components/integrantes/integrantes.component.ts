@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 import { Integrante } from 'src/app/core/models/integrante.model';
 import { IntegrantesService } from 'src/app/core/services/integrantes/integrantes.service';
@@ -8,16 +8,23 @@ import { IntegrantesService } from 'src/app/core/services/integrantes/integrante
   templateUrl: './integrantes.component.html',
   styleUrls: ['./integrantes.component.scss']
 })
-export class IntegrantesComponent implements OnInit {
+export class IntegrantesComponent implements DoCheck, OnInit {
 
   integrantes: Integrante[] = [];
+  filtro_nombre: string;
 
   constructor(
     private integrantesService: IntegrantesService
-  ) { }
+  ) {
+    this.filtro_nombre = "";
+  }
 
   ngOnInit(): void {
     this.fetchIntegrantes();
+  }
+
+  ngDoCheck() {
+    this.filtro_nombre = (<HTMLInputElement>document.getElementById("filtroCards")).value;
   }
 
   outPut_IntegranteVerDetalle(id: string) {

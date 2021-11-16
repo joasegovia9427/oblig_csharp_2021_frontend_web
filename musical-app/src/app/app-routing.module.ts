@@ -6,7 +6,7 @@ import { AdminGuard } from './admin.guard';
 
 //proximos a modularizar
 import { LoginComponent } from './login/login.component';
-
+import { AboutUsComponent } from './shared/components/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -52,7 +52,11 @@ const routes: Routes = [
       {
         path: 'admin',
         loadChildren: () => import('./banda/banda.module').then(m => m.BandaModule)
-      }
+      },
+      {
+        path: 'about-us',
+        component: AboutUsComponent
+      },
     ]
   },
   {

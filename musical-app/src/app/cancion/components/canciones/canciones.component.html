@@ -2,7 +2,18 @@
   <h6 class="listaTitulo">Lista de Canciones</h6>
 </div>
 
+<mat-form-field appearance="outline">
+  <mat-label>Filtra por nombre de Cancion</mat-label>
+  <input id="filtroCards" matInput placeholder="Ej.: Yesterday" />
+</mat-form-field>
+
 <div class="cancion-grid">
-  <app-cancion *ngFor="let cancion of canciones" [cancion]="cancion">
-  </app-cancion>
+  <ng-container *ngFor="let cancion of canciones">
+    <ng-container
+      *ngIf="
+        cancion.Nombre.toLowerCase().includes(this.filtro_nombre.toLowerCase())
+      "
+      ><app-cancion [cancion]="cancion"> </app-cancion
+    ></ng-container>
+  </ng-container>
 </div>

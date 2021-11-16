@@ -23,7 +23,7 @@ import { MaterialModule } from '../../../material/material.module';
 //export class BandaComponent implements OnChanges, OnInit {
 export class CancionComponent implements OnInit, DoCheck, OnDestroy {
 
-  @Input() cancion : Cancion;
+  @Input() cancion: Cancion;
   @Output() outPut_CancionesVerDetalle: EventEmitter<any> = new EventEmitter();
 
   today = new Date();
