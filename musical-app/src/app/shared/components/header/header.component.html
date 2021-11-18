@@ -2,7 +2,13 @@
   <mat-toolbar-row>
     <div class="row between-xs middle-xs header-row">
       <nav>
-        <a routerLink="/">
+        <a
+          routerLink="/"
+          matTooltip="Ir al inicio"
+          matTooltipClass="tooltip"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
+        >
           <img
             class="top-bar-icon"
             src="assets/images/Itunes-music-app-icon.png"
@@ -11,21 +17,87 @@
           App de Musica
         </a>
         <!-- <a mat-button routerLink="/home" routerLinkActive="active">Home</a> -->
-        <a mat-button routerLink="/bandas" routerLinkActive="active"> Bandas</a>
-        <a mat-button routerLink="/albumes" routerLinkActive="active"
+        <a
+          mat-button
+          routerLink="/bandas"
+          routerLinkActive="active"
+          matTooltip="Lista de Bandas"
+          matTooltipClass="tooltip"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
+        >
+          Bandas</a
+        >
+        <a
+          mat-button
+          routerLink="/albumes"
+          routerLinkActive="active"
+          matTooltip="Lista de Albumes"
+          matTooltipClass="tooltip"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
           >Albumes</a
         >
-        <a mat-button routerLink="/canciones" routerLinkActive="active"
+        <a
+          mat-button
+          routerLink="/canciones"
+          routerLinkActive="active"
+          matTooltip="Lista de Canciones"
+          matTooltipClass="tooltip"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
           >Canciones</a
         >
-        <a mat-button routerLink="/cantantes" routerLinkActive="active"
+        <a
+          mat-button
+          routerLink="/cantantes"
+          routerLinkActive="active"
+          matTooltip="Lista de Cantantes"
+          matTooltipClass="tooltip"
+          matTooltipShowDelay="500"
+          matTooltipHideDelay="500"
           >Cantantes</a
         >
       </nav>
-      <a mat-raised-button routerLink="/login" routerLinkActive="active">
+
+      <button mat-raised-button [matMenuTriggerFor]="menu">
+        <mat-icon>insert_emoticon</mat-icon> UserName
+      </button>
+      <mat-menu #menu="matMenu">
+        <button
+          mat-menu-item
+          routerLink="/usuario/login"
+          routerLinkActive="active"
+        >
+          <mat-icon>login</mat-icon>
+          Iniciar Sesión
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/usuario/registro"
+          routerLinkActive="active"
+        >
+          <mat-icon>person_add_alt_1</mat-icon>
+          Registrarme
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/usuario/usuario"
+          routerLinkActive="active"
+        >
+          <mat-icon>manage_accounts</mat-icon>
+          Mi Usuario
+        </button>
+        <button mat-menu-item routerLink="/home" routerLinkActive="active">
+          <mat-icon>logout</mat-icon>
+          Cerrar Sesión
+        </button>
+      </mat-menu>
+
+      <!-- <a mat-raised-button routerLink="/usuario" routerLinkActive="active">
         <mat-icon>face</mat-icon>
         Mi Usuario
-      </a>
+      </a> -->
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

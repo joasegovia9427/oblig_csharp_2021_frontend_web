@@ -1,0 +1,44 @@
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Iniciar Sesión</h6>
+</div>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Ingresa tus datos de usuario</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input id="nombreUsuario" matInput placeholder="juanPerez" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Contraseña</mat-label>
+        <input id="contrasenia" matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="iniciarSesionUsuario()"
+      >
+        Ingresar
+      </button>
+      <a mat-stroked-button color="primary" routerLink="/home">Volver</a>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

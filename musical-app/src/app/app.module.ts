@@ -15,8 +15,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
 import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
 
 
@@ -26,9 +24,7 @@ import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.compo
     AppComponent,
     LayoutComponent,
     TopBarComponent,
-    LoginComponent,
-    RegistroComponent,
-    MenuHorizontalComponent,
+    MenuHorizontalComponent
   ],
   imports: [
     BrowserModule,

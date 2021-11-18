@@ -4,8 +4,6 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { AdminGuard } from './admin.guard';
 
-//proximos a modularizar
-import { LoginComponent } from './login/login.component';
 import { AboutUsComponent } from './shared/components/about-us/about-us.component';
 
 const routes: Routes = [
@@ -57,12 +55,21 @@ const routes: Routes = [
         path: 'about-us',
         component: AboutUsComponent
       },
+      {
+        path: 'usuario',
+        loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
+      },
     ]
   },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
+  // {
+  //   path: 'login',
+  //   loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
+  // },
+
+  // {
+  //   path: 'user',
+  //   loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule)
+  // },
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
