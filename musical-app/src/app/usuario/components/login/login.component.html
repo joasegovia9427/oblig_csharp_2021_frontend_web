@@ -7,6 +7,12 @@
     <mat-card-title>Ingresa tus datos de usuario</mat-card-title>
   </mat-card-header>
 
+  <p *ngIf="hideMsg == true">
+    <mat-error>
+      El nombre de usuario u contraseña es incorrecto, reintenta nuevamente
+    </mat-error>
+  </p>
+
   <mat-card-content>
     <p>
       <mat-form-field appearance="legacy">
@@ -41,4 +47,8 @@
       <a mat-stroked-button color="primary" routerLink="/home">Volver</a>
     </mat-card-actions>
   </mat-card-content>
+
+  <div mat-dialog-actions>
+    <a routerLink="/usuario/registro">¿No tienes usuario? Registrate aquí</a>
+  </div>
 </mat-card>

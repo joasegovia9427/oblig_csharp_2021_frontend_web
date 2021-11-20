@@ -4,6 +4,9 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { Banda } from './../../../core/models/banda.model';
 import { BandasService } from 'src/app/core/services/bandas/bandas.service';
 
+import { RouterModule, Routes, Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-bandas',
   templateUrl: './bandas.component.html',
@@ -18,13 +21,22 @@ export class BandasComponent implements DoCheck, OnInit {
   ////https://www.cloudhadoop.com/angular-get-input-value-multiple-ways/
 
   constructor(
-    private bandasService: BandasService
+    private bandasService: BandasService,
+    private route: Router
   ) {
     this.filtro_nombre = "";
   }
 
   ngOnInit(): void {
-    this.fetchBandas();
+    console.log("Usuario sess userName: " + window.sessionStorage["userName"]);
+    const sessionUserName = window.sessionStorage["userName"];
+    if (sessionUserName.length < 1) {
+      this.route.navigate(['/usuario/login']);
+    }
+    else {
+      this.fetchBandas();
+    }
+
   }
 
   ngDoCheck() {
@@ -44,3 +56,4 @@ export class BandasComponent implements DoCheck, OnInit {
   }
 
 }
+

@@ -8,6 +8,8 @@
   <input id="filtroCards" matInput placeholder="Ej.: Yesterday" />
 </mat-form-field>
 
+<mat-spinner *ngIf="canciones.length == 0"></mat-spinner>
+
 <div class="cancion-grid">
   <ng-container *ngFor="let cancion of canciones">
     <ng-container

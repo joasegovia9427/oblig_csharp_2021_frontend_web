@@ -11,9 +11,6 @@ import { MaterialModule } from '../material/material.module';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     ExponentialPipe,
@@ -21,6 +18,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     HeaderComponent,
     FooterComponent,
     AboutUsComponent,
+
   ],
   exports: [
     ExponentialPipe,
@@ -34,6 +32,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     RouterModule,
     MaterialModule,
     ReactiveFormsModule,
+
   ]
 })
 export class SharedModule { }

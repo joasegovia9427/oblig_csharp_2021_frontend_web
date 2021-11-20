@@ -42,4 +42,17 @@ export class UsuariosService {
     return this.http.post(this.url, '');
   }
 
+  obtenerIdUsuariosByNombreUsuario(nombreUsuario) {
+    this.url = environment.url_api + '/usuarios/identificador/' + nombreUsuario;
+    console.log(this.url);
+    return this.http.get<number>(this.url);
+  }
+
+  obtenerDatosUsuarioByIdUsuario(idUsuario) {
+    this.url = environment.url_api + '/usuarios/obtener/' + idUsuario;
+    console.log(this.url);
+    return this.http.get<Usuario>(this.url);
+  }
+
+
 }

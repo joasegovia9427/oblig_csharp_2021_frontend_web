@@ -15,6 +15,10 @@ import { Cancion } from 'src/app/core/models/cancion.model';
   styleUrls: ['./cancion-detail.component.scss']
 })
 export class CancionDetailComponent implements OnInit {
+
+
+  hideMsgError = false;
+  hideMsgSuccess = false;
   Id: Number;
   cancion: Cancion;
   voto: number;
@@ -52,7 +56,17 @@ export class CancionDetailComponent implements OnInit {
       UsuarioId: 1,
     }
     console.log(newResenia);
-    this.cancioneService.enviarReseniaCancion(newResenia).subscribe(respuesta => { console.log(respuesta) })
+    this.cancioneService.enviarReseniaCancion(newResenia).subscribe(respuesta => {
+      console.log("enviarResenia: " + respuesta)
+      if (respuesta == true) {
+        console.log("entro al true")
+        this.hideMsgError = false;
+        this.hideMsgSuccess = true;
+      } else {
+        this.hideMsgError = true;
+        this.hideMsgSuccess = false;
+      }
+    })
   }
 
   radioChange(event: MatRadioChange, data: number) {

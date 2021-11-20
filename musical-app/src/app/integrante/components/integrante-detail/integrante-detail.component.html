@@ -5,6 +5,8 @@
   </h6>
 </div>
 
+<mat-spinner *ngIf="!integrante"></mat-spinner>
+
 <mat-card *ngIf="integrante">
   <div class="crop-image">
     <img [src]="integrante.Foto" alt="" />

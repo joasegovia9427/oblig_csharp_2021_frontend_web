@@ -14,9 +14,9 @@ import { MatDivider } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenu } from '@angular/material/menu';
 import { MatMenuModule } from '@angular/material/menu';
-
-
-
+// import {ProgressSpinnerOverviewExample} from './progress-spinner-overview-example';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [],
@@ -32,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatRadioModule,
     MatTooltipModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     MatButtonModule,
@@ -43,7 +44,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSelectModule,
     MatRadioModule,
     MatTooltipModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class MaterialModule { }

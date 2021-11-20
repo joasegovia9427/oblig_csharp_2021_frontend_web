@@ -25,6 +25,7 @@
           matTooltipClass="tooltip"
           matTooltipShowDelay="500"
           matTooltipHideDelay="500"
+          *ngIf="isMostrarBotones"
         >
           Bandas</a
         >
@@ -36,6 +37,7 @@
           matTooltipClass="tooltip"
           matTooltipShowDelay="500"
           matTooltipHideDelay="500"
+          *ngIf="isMostrarBotones"
           >Albumes</a
         >
         <a
@@ -46,6 +48,7 @@
           matTooltipClass="tooltip"
           matTooltipShowDelay="500"
           matTooltipHideDelay="500"
+          *ngIf="isMostrarBotones"
           >Canciones</a
         >
         <a
@@ -56,18 +59,20 @@
           matTooltipClass="tooltip"
           matTooltipShowDelay="500"
           matTooltipHideDelay="500"
+          *ngIf="isMostrarBotones"
           >Cantantes</a
         >
       </nav>
 
-      <button mat-raised-button [matMenuTriggerFor]="menu">
-        <mat-icon>insert_emoticon</mat-icon> UserName
+      <button id="botonUserName" mat-raised-button [matMenuTriggerFor]="menu">
+        <mat-icon matPrefix>insert_emoticon</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
         <button
           mat-menu-item
           routerLink="/usuario/login"
           routerLinkActive="active"
+          *ngIf="isMostrarBotonesWhenHasSession"
         >
           <mat-icon>login</mat-icon>
           Iniciar Sesión
@@ -76,6 +81,7 @@
           mat-menu-item
           routerLink="/usuario/registro"
           routerLinkActive="active"
+          *ngIf="isMostrarBotonesWhenHasSession"
         >
           <mat-icon>person_add_alt_1</mat-icon>
           Registrarme
@@ -84,11 +90,18 @@
           mat-menu-item
           routerLink="/usuario/usuario"
           routerLinkActive="active"
+          *ngIf="isMostrarBotones"
         >
           <mat-icon>manage_accounts</mat-icon>
           Mi Usuario
         </button>
-        <button mat-menu-item routerLink="/home" routerLinkActive="active">
+        <button
+          (click)="cerrarSesion()"
+          mat-menu-item
+          routerLink="/home"
+          routerLinkActive="active"
+          *ngIf="isMostrarBotones"
+        >
           <mat-icon>logout</mat-icon>
           Cerrar Sesión
         </button>

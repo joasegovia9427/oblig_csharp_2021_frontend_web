@@ -3,6 +3,7 @@ import { Usuario } from 'src/app/core/models/usuario.model';
 import { UsuariosService } from 'src/app/core/services/usuarios/usuarios.service';
 import { Persona } from 'src/app/core/models/persona.model';
 import { MatDialog } from '@angular/material/dialog';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class RegistroComponent implements DoCheck, OnInit {
 
+  hideMsg = false;
   hide = true;
   nombre: string;
   apellido: string;
@@ -19,10 +21,16 @@ export class RegistroComponent implements DoCheck, OnInit {
 
   constructor(
     private usuariosService: UsuariosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
+    console.log("sess userName: " + window.sessionStorage["userName"]);
+    const sessionUserName = window.sessionStorage["userName"];
+    if (sessionUserName.length > 0) {
+      this.route.navigate(['/home']);
+    }
   }
 
   ngDoCheck() {
@@ -46,8 +54,13 @@ export class RegistroComponent implements DoCheck, OnInit {
       Persona: newPersona,
     }
     console.log(newUsuario);
-    this.usuariosService.crearUsuario(newUsuario).subscribe(respuesta => { console.log(respuesta) })
-    this.dialog.open(RegistroDialog);
+    this.usuariosService.crearUsuario(newUsuario).subscribe(respuesta => {
+      console.log(respuesta)
+      this.hideMsg = true;
+      this.dialog.open(RegistroDialog);
+
+    })
+
   }
 
 }

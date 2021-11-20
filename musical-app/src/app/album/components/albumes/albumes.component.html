@@ -8,6 +8,8 @@
   <input id="filtroCards" matInput placeholder="Ej.: Abbey Road" />
 </mat-form-field>
 
+<mat-spinner *ngIf="albumes.length == 0"></mat-spinner>
+
 <div class="album-grid">
   <ng-container *ngFor="let album of albumes">
     <ng-container

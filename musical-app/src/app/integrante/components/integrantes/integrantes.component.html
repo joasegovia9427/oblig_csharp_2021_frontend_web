@@ -8,6 +8,8 @@
   <input id="filtroCards" matInput placeholder="Ej.: John" />
 </mat-form-field>
 
+<mat-spinner *ngIf="integrantes.length == 0"></mat-spinner>
+
 <div class="integrante-grid">
   <ng-container *ngFor="let integrante of integrantes">
     <ng-container

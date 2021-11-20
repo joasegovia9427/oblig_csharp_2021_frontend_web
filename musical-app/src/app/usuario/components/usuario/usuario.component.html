@@ -1,1 +1,43 @@
-<p>user works!</p>
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Datos de usuario</h6>
+</div>
+
+<mat-spinner *ngIf="!usuario"></mat-spinner>
+
+<mat-card *ngIf="usuario">
+  <mat-card-header>
+    <mat-card-title>Mis Datos</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>Usuario ID: {{ usuario.Id }}</p>
+    <p>Nombre de Usuario {{ usuario.NombreUsuario }}</p>
+    <p>Primer Nombre {{ usuario.Persona.Nombre }}</p>
+    <p>Apellido {{ usuario.Persona.Apellido }}</p>
+    <p>Persona ID: {{ usuario.Persona.Id }}</p>
+
+    <p>
+      Contraseña:
+      <input
+        disabled
+        id="contrasenia"
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        value="{{ this.contrasenia }}"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </p>
+
+    <mat-card-actions>
+      <a mat-stroked-button color="primary" routerLink="/home">Volver</a>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

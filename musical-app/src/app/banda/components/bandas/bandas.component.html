@@ -13,6 +13,8 @@
   <p>{{ banda.nombre }}</p>
 </div> -->
 
+<mat-spinner *ngIf="bandas.length == 0"></mat-spinner>
+
 <div class="banda-grid">
   <ng-container *ngFor="let banda of bandas">
     <ng-container
