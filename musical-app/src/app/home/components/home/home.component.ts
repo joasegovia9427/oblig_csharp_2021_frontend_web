@@ -16,6 +16,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("home sess userName: " + window.sessionStorage["userName"]);
+    if (window.sessionStorage["reloadF5"] == "true") {
+      window.sessionStorage["reloadF5"] = "false";
+      window.location.href = window.location.href;
+    }
   }
 
   ngAfterViewInit() {

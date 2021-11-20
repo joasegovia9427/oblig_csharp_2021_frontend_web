@@ -2,6 +2,8 @@
   <h6 class="listaTitulo">Album: {{ album.Nombre | uppercase }}</h6>
 </div>
 
+<mat-spinner *ngIf="!album"></mat-spinner>
+
 <mat-card *ngIf="album">
   <mat-card-header>
     <!-- <mat-card-title>{{ album.Nombre | uppercase }}</mat-card-title> -->

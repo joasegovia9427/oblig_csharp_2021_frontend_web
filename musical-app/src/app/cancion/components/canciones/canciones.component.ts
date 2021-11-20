@@ -4,6 +4,8 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import { Cancion } from './../../../core/models/cancion.model';
 import { CancionesService } from 'src/app/core/services/canciones/canciones.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-canciones',
   templateUrl: './canciones.component.html',
@@ -16,15 +18,24 @@ export class CancionesComponent implements DoCheck, OnInit {
   filtro_nombre: string;
 
   constructor(
-    private cancionesService: CancionesService
+    private cancionesService: CancionesService,
+    private route: Router
   ) {
     this.filtro_nombre = "";
   }
 
 
   ngOnInit(): void {
-    this.fetchCanciones();
-    // console.log("luego de this.fetchCanciones();");
+    console.log("Usuario sess userName: " + window.sessionStorage["userName"]);
+    const sessionUserName = window.sessionStorage["userName"];
+    if (sessionUserName.length < 1) {
+      this.route.navigate(['/usuario/login']);
+    }
+    else {
+      this.fetchCanciones();
+      // console.log("luego de this.fetchCanciones();");
+    }
+
   }
 
   ngDoCheck() {

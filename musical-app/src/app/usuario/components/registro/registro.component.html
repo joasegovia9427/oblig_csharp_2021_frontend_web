@@ -1,0 +1,64 @@
+<div class="listaTituloBox">
+  <h6 class="listaTitulo">Registro</h6>
+</div>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Ingresa tus datos</mat-card-title>
+  </mat-card-header>
+
+  <p *ngIf="hideMsg == true">
+    <mat-error>
+      El usuario que esta intentando crear ya existe, reintente con otros datos
+    </mat-error>
+  </p>
+
+  <mat-card-content>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input id="nombreUsuario" matInput placeholder="juanPerez" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Primer Nombre</mat-label>
+        <input id="nombre" matInput placeholder="Juan" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Apellido</mat-label>
+        <input id="apellido" matInput placeholder="Perez" />
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Contraseña</mat-label>
+        <input id="contrasenia" matInput [type]="hide ? 'password' : 'text'" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+    </p>
+
+    <mat-card-actions>
+      <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+
+      <button mat-raised-button color="primary" (click)="crearUsuario()">
+        Crear Usuario
+      </button>
+      <a mat-stroked-button color="primary" routerLink="/home">Volver</a>
+    </mat-card-actions>
+  </mat-card-content>
+
+  <div mat-dialog-actions>
+    <a routerLink="/usuario/login">¿Ya tienes usuario? Iniciar Sesión aquí</a>
+  </div>
+</mat-card>

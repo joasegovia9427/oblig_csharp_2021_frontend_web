@@ -3,7 +3,8 @@
 </div>
 
 <mat-form-field appearance="outline">
-  <mat-label>Filtra por nombre de Banda</mat-label>
+  <mat-icon matPrefix>search</mat-icon>
+  <mat-label> Filtra por nombre de Banda</mat-label>
   <input id="filtroCards" matInput placeholder="Ej.: Mouse" />
 </mat-form-field>
 
@@ -11,6 +12,8 @@
   <p>{{ banda.id }}</p>
   <p>{{ banda.nombre }}</p>
 </div> -->
+
+<mat-spinner *ngIf="bandas.length == 0"></mat-spinner>
 
 <div class="banda-grid">
   <ng-container *ngFor="let banda of bandas">

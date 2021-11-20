@@ -4,6 +4,8 @@
   </h6>
 </div>
 
+<mat-spinner *ngIf="!cancion"></mat-spinner>
+
 <mat-card *ngIf="cancion">
   <mat-card-header>
     <mat-card-title>Género: {{ cancion.Genero | uppercase }}</mat-card-title>
@@ -23,6 +25,12 @@
 <mat-card *ngIf="cancion">
   <mat-card-header>
     <mat-card-title>Reseña</mat-card-title>
+    <p *ngIf="hideMsgError == true">
+      <mat-error> Ha ocurrido un error al enviar reseña, reintenta </mat-error>
+    </p>
+    <p class="msgSuccess" *ngIf="hideMsgSuccess == true">
+      Reseña enviada correctamente
+    </p>
     <mat-card-subtitle>Cancion: {{ cancion.Nombre }}</mat-card-subtitle>
   </mat-card-header>
 

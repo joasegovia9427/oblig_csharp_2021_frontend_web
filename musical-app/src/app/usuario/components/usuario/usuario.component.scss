@@ -1,0 +1,26 @@
+@media (min-width: 576px) {
+  mat-card {
+    margin-top: 20px;
+    padding-left: 30px;
+    width: 50%;
+    margin: auto;
+  }
+}
+
+.mat-form-field,
+ng-tns-c118-1,
+mat-primary,
+mat-form-field-type-mat-input,
+mat-form-field-appearance-legacy,
+mat-form-field-can-float,
+mat-form-field-has-label,
+mat-form-field-hide-placeholder,
+ng-star-inserted {
+  width: 90%;
+}
+
+.mat-input-element:disabled {
+  color: rgba(0, 0, 0, 1);
+  background-color: white;
+  border-color: white;
+}

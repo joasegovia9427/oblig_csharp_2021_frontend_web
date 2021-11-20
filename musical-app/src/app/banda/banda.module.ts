@@ -9,6 +9,7 @@ import { BandaRoutingModule } from './banda-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { MaterialModule } from './../material/material.module';
 
+
 @NgModule({
     declarations: [
         BandaComponent,

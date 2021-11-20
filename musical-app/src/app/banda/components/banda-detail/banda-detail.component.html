@@ -2,6 +2,8 @@
   <h6 class="listaTitulo">Nombre de Banda: {{ banda.Nombre | uppercase }}</h6>
 </div>
 
+<mat-spinner *ngIf="!banda"></mat-spinner>
+
 <mat-card *ngIf="banda">
   <mat-card-header>
     <!-- <mat-card-title>{{ banda.Nombre | uppercase }}</mat-card-title> -->
@@ -10,6 +12,7 @@
   <!--   <div class="crop-image">
     <img [src]="product.image" alt="">
   </div>  -->
+
   <mat-card-content>
     <p>Banda ID: {{ banda.Id }}</p>
     <p>Año de creación {{ banda.AnioCreacion }}</p>
@@ -21,6 +24,12 @@
 <mat-card *ngIf="banda">
   <mat-card-header>
     <mat-card-title> Reseña </mat-card-title>
+    <p *ngIf="hideMsgError == true">
+      <mat-error> Ha ocurrido un error al enviar reseña, reintenta </mat-error>
+    </p>
+    <p class="msgSuccess" *ngIf="hideMsgSuccess == true">
+      Reseña enviada correctamente
+    </p>
     <mat-card-subtitle>Banda: {{ banda.Nombre }}</mat-card-subtitle>
   </mat-card-header>
 
