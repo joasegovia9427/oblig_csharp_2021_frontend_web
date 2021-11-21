@@ -16,6 +16,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
+    if (window.sessionStorage["userName"] == undefined) {
+      // window.sessionStorage["userName"] = "";
+      sessionStorage.setItem("userName", "");
+      sessionStorage.setItem("reloadF5", "");
+    }
+
     console.log("home sess userName: " + window.sessionStorage["userName"]);
     if (window.sessionStorage["reloadF5"] == "true") {
       window.sessionStorage["reloadF5"] = "false";

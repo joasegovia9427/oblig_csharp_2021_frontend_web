@@ -17,6 +17,13 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (window.sessionStorage["userName"] == undefined) {
+      // window.sessionStorage["userName"] = "";
+      sessionStorage.setItem("userName", "");
+      sessionStorage.setItem("reloadF5", "");
+    }
+
+
     console.log("header sess userName: " + window.sessionStorage["userName"]);
     const sessionUserName = window.sessionStorage["userName"];
     if (sessionUserName.length < 1) {

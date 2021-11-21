@@ -7,7 +7,7 @@
     <mat-card-title>Ingresa tus datos</mat-card-title>
   </mat-card-header>
 
-  <p *ngIf="hideMsg == true">
+  <p *ngIf="mostrarMsgError == true">
     <mat-error>
       El usuario que esta intentando crear ya existe, reintente con otros datos
     </mat-error>
