@@ -12,7 +12,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class RegistroComponent implements DoCheck, OnInit {
 
-  hideMsg = false;
+  mostrarMsgError = false;
   hide = true;
   nombre: string;
   apellido: string;
@@ -56,8 +56,14 @@ export class RegistroComponent implements DoCheck, OnInit {
     console.log(newUsuario);
     this.usuariosService.crearUsuario(newUsuario).subscribe(respuesta => {
       console.log(respuesta)
-      this.hideMsg = true;
-      this.dialog.open(RegistroDialog);
+
+      if (respuesta == true) {
+        this.mostrarMsgError = false;
+        this.dialog.open(RegistroDialog);
+      }
+      else {
+        this.mostrarMsgError = true;
+      }
 
     })
 
