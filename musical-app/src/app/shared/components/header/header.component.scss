@@ -40,3 +40,30 @@ nav > a.active {
 .mat-raised-button {
   color: mat-color($primary);
 }
+
+@media (min-width: 576px) {
+  .menuMobile {
+    margin-top: -1000%;
+  }
+}
+
+@media (max-width: 576px) {
+  .menuMobile {
+    margin-left: 70px;
+    border-color: white;
+  }
+  .menuDesk {
+    margin-top: -1000%;
+    float: left;
+  }
+  .navDesk {
+    width: 20%;
+  }
+  // .top-bar-icon {
+  //   width: 16px;
+  // }
+  .titleDesk {
+    // font: 10px !important;
+    font-size: 15px;
+  }
+}

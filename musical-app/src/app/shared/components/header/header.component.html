@@ -1,8 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <div class="row between-xs middle-xs header-row">
-      <nav>
+      <nav class="navDesk">
         <a
+          class="titleDesk"
           routerLink="/"
           matTooltip="Ir al inicio"
           matTooltipClass="tooltip"
@@ -18,6 +19,7 @@
         </a>
         <!-- <a mat-button routerLink="/home" routerLinkActive="active">Home</a> -->
         <a
+          class="menuDesk"
           mat-button
           routerLink="/bandas"
           routerLinkActive="active"
@@ -30,6 +32,7 @@
           Bandas</a
         >
         <a
+          class="menuDesk"
           mat-button
           routerLink="/albumes"
           routerLinkActive="active"
@@ -41,6 +44,7 @@
           >Albumes</a
         >
         <a
+          class="menuDesk"
           mat-button
           routerLink="/canciones"
           routerLinkActive="active"
@@ -52,6 +56,7 @@
           >Canciones</a
         >
         <a
+          class="menuDesk"
           mat-button
           routerLink="/cantantes"
           routerLinkActive="active"
@@ -63,6 +68,42 @@
           >Cantantes</a
         >
       </nav>
+
+      <ng-container *ngIf="isMostrarBotones">
+        <button
+          class="menuMobile"
+          mat-button
+          mat-stroked-button
+          [matMenuTriggerFor]="aboveMenu"
+        >
+          Listados
+        </button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+          <button mat-menu-item routerLink="/bandas" routerLinkActive="active">
+            Bandas
+          </button>
+
+          <button mat-menu-item routerLink="/albumes" routerLinkActive="active">
+            Albumes
+          </button>
+
+          <button
+            mat-menu-item
+            routerLink="/canciones"
+            routerLinkActive="active"
+          >
+            Canciones
+          </button>
+
+          <button
+            mat-menu-item
+            routerLink="/cantantes"
+            routerLinkActive="active"
+          >
+            Cantantes
+          </button>
+        </mat-menu>
+      </ng-container>
 
       <button id="botonUserName" mat-raised-button [matMenuTriggerFor]="menu">
         <mat-icon matPrefix>insert_emoticon</mat-icon>
