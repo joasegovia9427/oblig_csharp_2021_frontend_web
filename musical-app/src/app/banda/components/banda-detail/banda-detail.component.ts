@@ -23,6 +23,7 @@ export class BandaDetailComponent implements OnInit {
   banda: Banda;
   integrantes: Integrante;
   voto: number;
+  integrantesLista: Integrante[];
 
   constructor(
     private routeOwn: ActivatedRoute,
@@ -51,6 +52,10 @@ export class BandaDetailComponent implements OnInit {
       // this.integrantes = banda.Integrantes.length;
       console.log(banda.Integrantes.length);
       console.log("datos obtenidos de la banda:" + banda);
+
+      this.integrantesLista = banda.Integrantes;
+
+
     })
 
   }

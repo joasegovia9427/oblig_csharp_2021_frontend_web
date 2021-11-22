@@ -18,6 +18,26 @@
     <p>Año de creación {{ banda.AnioCreacion }}</p>
     <p>Año de separación {{ banda.AnioSeparacion }}</p>
     <p>Cantidad de integrantes {{ banda.Integrantes.length }}</p>
+
+    <div class="integrante-grid">
+      <ng-container *ngFor="let integrante of integrantesLista; let i = index">
+        <!-- <p>
+          Integrante {{ i + 1 }} - Nombre:
+          {{ integrante.Persona.Nombre + " " + integrante.Persona.Apellido }}
+        </p> -->
+        <a
+          mat-stroked-button
+          color="primary"
+          routerLink="/cantantes/{{ integrante.Id }}"
+        >
+          {{ integrante.Persona.Nombre + " " + integrante.Persona.Apellido }}</a
+        >
+
+        <!-- <ng-container        
+          ><app-integrante [integrante]="integrante"> </app-integrante
+        ></ng-container> -->
+      </ng-container>
+    </div>
   </mat-card-content>
 </mat-card>
 

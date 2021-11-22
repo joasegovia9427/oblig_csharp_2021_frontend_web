@@ -4,6 +4,18 @@ import { UsuariosService } from 'src/app/core/services/usuarios/usuarios.service
 import { Persona } from 'src/app/core/models/persona.model';
 import { MatDialog } from '@angular/material/dialog';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
+
+import { FormGroupDirective, NgForm } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-registro',
@@ -12,6 +24,12 @@ import { RouterModule, Routes, Router } from '@angular/router';
 })
 export class RegistroComponent implements DoCheck, OnInit {
 
+  firstNameField: FormControl;
+  lastNameField: FormControl;
+  userNameField: FormControl;
+  userPassField: FormControl;
+
+  isBotonCrearUserMostrar = false;
   mostrarMsgError = false;
   hide = true;
   nombre: string;
@@ -19,11 +37,42 @@ export class RegistroComponent implements DoCheck, OnInit {
   nombreUsuario: string;
   contrasenia: string;
 
+  matcher = new MyErrorStateMatcher();
+
   constructor(
     private usuariosService: UsuariosService,
     public dialog: MatDialog,
     private route: Router
-  ) { }
+  ) {
+    this.firstNameField = new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20)
+    ]);
+    this.firstNameField.valueChanges.subscribe(value => { })
+
+    this.lastNameField = new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(20)
+    ]);
+    this.lastNameField.valueChanges.subscribe(value => { })
+
+    this.userNameField = new FormControl('', [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(20)
+    ]);
+    this.userNameField.valueChanges.subscribe(value => { })
+
+    this.userPassField = new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(20)
+    ]);
+    this.userPassField.valueChanges.subscribe(value => { })
+
+  }
 
   ngOnInit(): void {
     console.log("sess userName: " + window.sessionStorage["userName"]);
@@ -38,6 +87,17 @@ export class RegistroComponent implements DoCheck, OnInit {
     this.apellido = (<HTMLInputElement>document.getElementById("apellido")).value;
     this.nombreUsuario = (<HTMLInputElement>document.getElementById("nombreUsuario")).value;
     this.contrasenia = (<HTMLInputElement>document.getElementById("contrasenia")).value;
+
+
+    if (this.firstNameField.valid &&
+      this.lastNameField.valid &&
+      this.userNameField.valid &&
+      this.userPassField.valid) {
+
+      this.isBotonCrearUserMostrar = true
+    } else {
+      this.isBotonCrearUserMostrar = false
+    }
   }
 
 
