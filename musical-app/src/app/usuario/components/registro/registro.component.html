@@ -17,25 +17,130 @@
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Nombre de Usuario</mat-label>
-        <input id="nombreUsuario" matInput placeholder="juanPerez" />
+        <input
+          matInput
+          [formControl]="userNameField"
+          [errorStateMatcher]="matcher"
+          id="nombreUsuario"
+          placeholder="jPerez"
+        />
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="userNameField.hasError('required')">
+          Nombre de Usuario es <strong>requerido</strong>
+        </mat-error>
       </mat-form-field>
     </p>
+
+    <!-- <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input
+          [formControl]="userNameField"
+          id="nombreUsuario"
+          matInput
+          placeholder="juanPerez"
+        />
+      </mat-form-field>
+    </p> -->
+
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Primer Nombre</mat-label>
-        <input id="nombre" matInput placeholder="Juan" />
+        <input
+          matInput
+          [formControl]="firstNameField"
+          [errorStateMatcher]="matcher"
+          id="nombre"
+          placeholder="Juan"
+        />
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="firstNameField.hasError('required')">
+          Primer nombre es <strong>requerido</strong>
+        </mat-error>
       </mat-form-field>
     </p>
+    <!-- <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Primer Nombre</mat-label>
+        <input
+          [formControl]="firstNameField"
+          id="nombre"
+          matInput
+          placeholder="Juan"
+          [errorStateMatcher]="matcher"
+        />
+      </mat-form-field>
+      <mat-error *ngIf="firstNameField.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </p> -->
+
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Apellido</mat-label>
-        <input id="apellido" matInput placeholder="Perez" />
+        <input
+          matInput
+          [formControl]="lastNameField"
+          [errorStateMatcher]="matcher"
+          id="apellido"
+          placeholder="Perez"
+        />
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="lastNameField.hasError('required')">
+          Apellido es <strong>requerido</strong>
+        </mat-error>
       </mat-form-field>
     </p>
+
+    <!-- 
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Apellido</mat-label>
+        <input
+          [formControl]="lastNameField"
+          id="apellido"
+          matInput
+          placeholder="Perez"
+        />
+      </mat-form-field>
+    </p> -->
+
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Contraseña</mat-label>
-        <input id="contrasenia" matInput [type]="hide ? 'password' : 'text'" />
+        <input
+          matInput
+          [formControl]="userPassField"
+          [errorStateMatcher]="matcher"
+          id="contrasenia"
+          placeholder="Perez"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="userPassField.hasError('required')">
+          Contraseña es <strong>requerida</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <!-- <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Contraseña</mat-label>
+        <input
+          [formControl]="userPassField"
+          id="contrasenia"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+        />
         <button
           mat-icon-button
           matSuffix
@@ -46,12 +151,20 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
-    </p>
+    </p> -->
 
     <mat-card-actions>
       <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
 
-      <button mat-raised-button color="primary" (click)="crearUsuario()">
+      <button
+        *ngIf="isBotonCrearUserMostrar"
+        mat-raised-button
+        color="primary"
+        (click)="crearUsuario()"
+      >
+        Crear Usuario
+      </button>
+      <button *ngIf="!isBotonCrearUserMostrar" mat-raised-button disabled>
         Crear Usuario
       </button>
       <a mat-stroked-button color="primary" routerLink="/home">Volver</a>

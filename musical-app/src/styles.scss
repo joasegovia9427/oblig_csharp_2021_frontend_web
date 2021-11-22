@@ -13,6 +13,15 @@
   grid-gap: 50px 20px;
 }
 
+.banda-grid-links,
+.album-grid-links,
+.integrante-grid-links,
+.cancion-grid-links {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px 10px;
+}
+
 .container {
   margin-top: 2%;
   width: 100%;
@@ -23,6 +32,15 @@
 }
 
 @media (min-width: 576px) {
+  .banda-grid-links,
+  .integrante-grid-links,
+  .cancion-grid-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .album-grid-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .banda-grid,
   .integrante-grid,
   .cancion-grid {
@@ -31,6 +49,7 @@
   .album-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .container {
     max-width: 1110px;
     padding-right: 16px;

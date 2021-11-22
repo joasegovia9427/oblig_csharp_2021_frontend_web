@@ -17,6 +17,23 @@
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Nombre de Usuario</mat-label>
+        <input
+          matInput
+          [formControl]="userNameField"
+          [errorStateMatcher]="matcher"
+          id="nombreUsuario"
+          placeholder="jPerez"
+        />
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="userNameField.hasError('required')">
+          Nombre de Usuario es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <!-- <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Nombre de Usuario</mat-label>
         <input id="nombreUsuario" matInput placeholder="juanPerez" />
       </mat-form-field>
     </p>
@@ -34,15 +51,46 @@
           <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
         </button>
       </mat-form-field>
+    </p> -->
+
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Contraseña</mat-label>
+        <input
+          matInput
+          [formControl]="userPassField"
+          [errorStateMatcher]="matcher"
+          id="contrasenia"
+          placeholder="Perez"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        <mat-hint>Entre 3 y 20 caracteres</mat-hint>
+        <mat-error *ngIf="userPassField.hasError('required')">
+          Contraseña es <strong>requerida</strong>
+        </mat-error>
+      </mat-form-field>
     </p>
 
     <mat-card-actions>
       <button
+        *ngIf="isBotonIngresarMostrar"
         mat-raised-button
         color="primary"
         (click)="iniciarSesionUsuario()"
       >
         Ingresar
+      </button>
+      <button *ngIf="!isBotonIngresarMostrar" mat-raised-button disabled>
+        Crear Usuario
       </button>
       <a mat-stroked-button color="primary" routerLink="/home">Volver</a>
     </mat-card-actions>
