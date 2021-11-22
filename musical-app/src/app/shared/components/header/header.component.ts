@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     console.log("header sess userName: " + window.sessionStorage["userName"]);
     const sessionUserName = window.sessionStorage["userName"];
     if (sessionUserName.length < 1) {
-      this.route.navigate(['/usuario/login']);
+      // this.route.navigate(['/usuario/login']);
       this.isMostrarBotones = false;
       this.isMostrarBotonesWhenHasSession = true;
       this.nombreUsuario = "";
@@ -36,7 +36,12 @@ export class HeaderComponent implements OnInit {
       this.isMostrarBotones = true;
       this.isMostrarBotonesWhenHasSession = false;
       this.nombreUsuario = window.sessionStorage["userName"];
-      (<HTMLInputElement>document.getElementById("botonUserName")).textContent = this.nombreUsuario;
+      if (this.nombreUsuario.length > 8) {
+        (<HTMLInputElement>document.getElementById("botonUserName")).textContent = this.nombreUsuario.slice(0, 8) + "...";
+      } else {
+        (<HTMLInputElement>document.getElementById("botonUserName")).textContent = this.nombreUsuario;
+      }
+
     }
   }
 

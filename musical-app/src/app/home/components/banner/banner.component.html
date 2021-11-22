@@ -1,6 +1,10 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let img of images; index as i">
+    <div
+      class="swiper-slide"
+      data-swiper-autoplay="2000"
+      *ngFor="let img of images; index as i"
+    >
       <div [ngSwitch]="i">
         <a routerLink="/bandas" *ngSwitchCase="0">
           <img [src]="img" alt="imagen de banner" />

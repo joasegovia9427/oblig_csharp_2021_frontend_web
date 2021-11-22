@@ -39,6 +39,17 @@
   .mat-card {
     width: 80%;
   }
+  .listaTitulo {
+    color: #3f51b5;
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .listaTitulo {
+    color: #3f51b5;
+    font-size: 20px !important;
+  }
 }
 
 .listaTituloBox {
@@ -51,10 +62,6 @@
   padding-bottom: 0%;
   position: relative;
   z-index: 1;
-}
-.listaTitulo {
-  color: #3f51b5;
-  font-size: 30px !important;
 }
 
 .mat-form-field {

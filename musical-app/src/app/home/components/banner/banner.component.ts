@@ -16,7 +16,11 @@ export class BannerComponent implements OnInit {
     '../../assets/images/banner-4.jpg',
   ];
 
-
+  // const swiper = new Swiper('.swiper', {
+  //   autoplay: {
+  //     delay: 5000,
+  //   },
+  // });
 
   constructor() { }
 

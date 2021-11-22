@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     console.log("home sess userName: " + window.sessionStorage["userName"]);
+    console.log("home sess reloadF5: " + window.sessionStorage["reloadF5"]);
     if (window.sessionStorage["reloadF5"] == "true") {
       window.sessionStorage["reloadF5"] = "false";
       window.location.href = window.location.href;

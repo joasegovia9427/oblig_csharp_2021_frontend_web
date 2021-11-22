@@ -24,3 +24,17 @@ mat-card {
     width: 80%;
   }
 }
+
+@media (max-width: 576px) {
+  .mat-radio-button {
+    margin-left: 1%;
+    margin-bottom: 1%;
+    background-color: rgb(243, 243, 243);
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+}
