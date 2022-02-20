@@ -13,6 +13,9 @@ Utilicé Material Design para los componentes.
 
 ## Video DEMO (parte back y front). href="https://youtu.be/hODyUd865WQ" target="_blank">Video en Youtube</a></h3>  
 
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/hODyUd865WQ)
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hODyUd865WQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## All parts' GitHub Repos:::
