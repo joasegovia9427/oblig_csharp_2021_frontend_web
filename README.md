@@ -13,12 +13,12 @@ Utilicé Material Design para los componentes.
 
 ## Video DEMO (parte back y front). href="https://youtu.be/hODyUd865WQ" target="_blank">Video en Youtube</a></h3>  
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/hODyUd865WQ)
+[![Watch the video](https://raw.githubusercontent.com/joasegovia9427/oblig_csharp_2021_frontend_web/main/Documentacion/DemoObligatorioAngularNet2021.png)](https://youtu.be/hODyUd865WQ)
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hODyUd865WQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## All parts' GitHub Repos:::
 BackEnd .net :: https://github.com/joasegovia9427/oblig_csharp_2021_backend
+
 FrontEnd Win .net :: https://github.com/joasegovia9427/oblig_csharp_2021_frontend_win
+
 FrontEnd Web Angular Material nodeServer :: https://github.com/joasegovia9427/oblig_csharp_2021_frontend_web
