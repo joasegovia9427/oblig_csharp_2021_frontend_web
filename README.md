@@ -13,7 +13,7 @@ Utilicé Material Design para los componentes.
 
 ## Video DEMO (parte back y front). href="https://youtu.be/hODyUd865WQ" target="_blank">Video en Youtube</a></h3>  
 
-[![Watch the video](https://raw.githubusercontent.com/joasegovia9427/oblig_csharp_2021_frontend_web/main/Documentacion/DemoObligatorioAngularNet2021.png)](https://youtu.be/hODyUd865WQ)
+[![Watch the video](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png)](https://youtu.be/hODyUd865WQ)
 
 
 ## All parts' GitHub Repos:::
