@@ -9,6 +9,8 @@ Utilicé Material Design para los componentes.
 
 ## Captura DEMO (parte web)
 
+![](Demo.gif)
+
 <br>
 
 <img src="https://github.com/joasegovia9427/oblig_csharp_2021_frontend_web/blob/main/Demo.gif" width="30px" data-canonical-src="https://github.com/joasegovia9427/oblig_csharp_2021_frontend_web/blob/main/Demo.gif" style="width: 100%;">
