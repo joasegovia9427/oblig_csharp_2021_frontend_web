@@ -11,6 +11,7 @@ Utilicé Material Design para los componentes.
 
 <img src="https://github.com/joasegovia9427/oblig_csharp_2021_frontend_web/blob/main/Demo.gif" width="30px" data-canonical-src="https://github.com/joasegovia9427/oblig_csharp_2021_frontend_web/blob/main/Demo.gif" style="width: 100%;">
 
+<img src="https://raw.githubusercontent.com/joasegovia9427/GameStream/main/ScreensShots/General-1.png" width="30px" data-canonical-src="https://raw.githubusercontent.com/joasegovia9427/GameStream/main/ScreensShots/General-1.png" style="width: 1000px;">
 
 <h3> Video DEMO (parte back y front) en <a title="Youtube" href="https://youtu.be/hODyUd865WQ" target="_blank">Video en Youtube</a></h3>
 
